@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #E7ECEA;
+    font-family: "Anonymous Pro", 'Courier New', Courier, monospace;
+}
+
+
+
+.instructions {
+    box-sizing: border-box;
+    height: calc(100vh - 80px); 
+    aspect-ratio: 8.5 / 11; 
+    margin: 40px auto;
+    padding: 30px 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.instructionButton 
+{
+	border: none;
+	color: black;
+	padding: 10px 20px;		
+    text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-top: 460px;
+    margin-left: 260px;
+	border-radius: 4px;
+}
+
+
+
+
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border: 1px solid #000;
+}
+
+h1 {
+    color: #E03923;
+    margin-bottom: 5px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-item {
+    border: 1px solid #000;
+    padding-top: 8px;
+    padding-left: 16px;
+    text-align: left;
+}
+
+.nav {
+    justify-content: flex-start;
+    background-color: #DBE2DF;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+.nav-rows {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+    background-color: #E7ECEA;
+    justify-self: center;
+}
+
+.nav-row {
+    flex: 1 1 0;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 60px;
+}
+
+.nav-row + .nav-row {
+    border-top: 2px solid #000;
+}
+
+
+.phone {
+    box-sizing: border-box;
+    width: min(240px, 90%);       
+    aspect-ratio: 310 / 638;
+    margin: auto;
+    border: 3px solid #000;
+    border-radius: 32px;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+
+
+.todo {
+    justify-content: flex-start;
+    background-color: #DBE2DF;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.todo-rows {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+    background-color: #E7ECEA;
+    justify-self: center;
+}
+
+.todo-row {
+    flex: 1 1 0;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    padding: 10px 100px 0;
+    margin-bottom: 60px;
+}
+
+.todo-row + .todo-row {
+    border-top: 2px solid #000;
+}
+
+
+
+
+/* ---------- ROW HEIGHTS ---------- */
+header.flex-container { flex: 0 0 108px; }  /* fixed height */
+main.flex-container   { flex: 1 1 auto; }   /* takes all leftover space */
+footer.flex-container { flex: 0 0 32px; }   /* fixed height */
+
+/* ---------- HEADER COLUMNS ---------- */
+header .flex-item:nth-child(1) { flex: 0 0 14%; }   /* file accessed */
+header .flex-item:nth-child(2) { flex: 1 1 auto; }  /* user num */
+header .flex-item:nth-child(3) { flex: 0 0 13.5%; } /* file number */
+
+/* ---------- MAIN COLUMNS ---------- */
+main .flex-item:nth-child(1) { flex: 0 0 12.5%; text-align: center; }   /* navigation */
+main .flex-item:nth-child(2) { flex: 1 1 auto; }    /* center content */
+main .flex-item:nth-child(3) { flex: 0 0 25%; text-align: center; }     /* to do */
+
+/* ---------- FOOTER COLUMNS ---------- */
+footer {
+    font-size: 12px;
+    justify-content: center;
+}
+
+footer .flex-item:nth-child(1) { flex: 0 0 7%; padding-left: 28px}    /* REC */
+footer .flex-item:nth-child(2) { flex: 1 1 auto; }  /* empty bar */
+footer .flex-item:nth-child(3) { flex: 0 0 9.5%; text-align: center; }  /* FPS 60 */
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #E03923;
+  border-radius: 50%;
+  display: inline-block;
+}
