@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+
+    <!--Author and Copyright-->
+    <meta name="author" content="Oceane Daumasson">
+    <meta name="Copyright" content="Oceane Daumasson, Final project, 2026">
+
+    <!--External Stylesheet-->
+    <link rel="Stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    
+
+<body>
+    <div class="page">
+        <!--Header top bar, separated into 3 boxes-->
+        <header class="flex-container">
+            <div class="flex-item">
+                <p>File accessed:</p>
+
+                <h2><time id="current-date"></time></h2>
+                <script>
+                    const dateElement = document.getElementById("current-date");
+                        const today = new Date();
+                        
+                        dateElement.textContent = today.toLocaleDateString();
+                 </script>
+
+            </div>
+            <div class="flex-item">
+                <h2>USER NUM. 01</h2>
+                <p>@oceane_daum</p>
+            </div>
+            <div class="flex-item">
+                <p>File number:</p>
+                <p>xxxxxxx</p>
+            </div>
+        </header>
+
+        <main class="flex-container">
+            <!--Left section, with the navbar-->
+            <div class="flex-item nav">
+                <p>NAVIGATION</p>
+                <div class="nav-rows">
+                    <a href="index.html" class="nav-item">
+                        <span class="nav-label">Instructions</span>
+                        <img src="images/document.svg" alt="">
+                    </a>
+                    <a href="files.html" class="nav-item">
+                        <span class="nav-label">Files</span>
+                        <img src="images/folder.svg" alt="">
+                    </a>
+                    <a href="report.html" class="nav-item">
+                        <span class="nav-label">Submit Report</span>
+                        <img src="images/checkmark.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!--Center section, with phone-->
+            <div class="flex-item">
+                <h1>INSTAGRAM PROFILE</h1>
+                <h3>GATHER DATA</h3>
+                
+                <div class="phone post-view">
+                    <div class="top-bar">
+                        <a href="mainHub.html" class="back-btn">&lt;</a>
+                        <div class="title">Posts</div>
+                    </div>
+
+                    <div class="post-user">
+                        <div class="mini-avatar"></div>
+                        <div class="post-username">oceane_daum</div>
+                    </div>
+
+                    <div class="post-image">
+                        <img src="images/birthday.png" alt="Photo of balloons">
+                    </div>
+
+                    <div class="post-actions">
+                        <div class="action-box">♡</div>
+                        <div class="action-box">⌲</div>
+                    </div>
+
+                    <div class="post-likes">68 likes</div>
+
+                    <div class="post-caption">
+                        <b>oceane_daum</b> Happy birthday to me 😘
+                    </div>
+
+                    <div class="post-comments">
+                        <!--<div class="comment"><b>anna_k</b> so cute!!</div>-->
+                    </div>
+
+                    <div class="post-date">October 23</div>
+                </div>
+            </div>
+
+            <!--Right section, with to do list-->
+            <div class="flex-item todo">
+                <p>TO DO</p>
+                <div class="todo-rows">
+                    <div class="todo-row">Task 1: Full Name</div>
+                    <div class="todo-row">Task 2: University</div>
+                    <div class="todo-row">Task 3: Brands Followed</div>
+                    <div class="todo-row">Task 4: ...</div>
+                </div>
+            </div>
+        </main>
+        
+        <!--Bottom section-->
+        <footer class="flex-container">
+            <div class="flex-item rec"><span class="dot"></span> REC</div>
+            <div class="flex-item"></div>
+            <div class="flex-item">FPS 60</div>
+        </footer>
+    </div>
+</body>
+</html>
+
+

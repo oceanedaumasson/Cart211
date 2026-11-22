@@ -13,7 +13,6 @@ body {
 }
 
 
-
 .instructions {
     box-sizing: border-box;
     height: calc(100vh - 80px); 
@@ -30,7 +29,7 @@ body {
 margin: 90px 0;
 }
 
-.instructionButton 
+.instruction-next-button 
 {
 	border: none;
 	color: black;
@@ -91,36 +90,30 @@ h3 {
     border: 2px solid #000;
     background-color: #E7ECEA;
     justify-self: center;
+        margin-left: 10px;
+    margin-right: 10px;
 }
 
-.nav-row {
+.nav-item {
     flex: 1 1 0;
     display: flex;
-    align-items: flex-start; 
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
     padding: 20px 10px 0;
+    color: inherit;
+    text-decoration: none;
 }
 
-.nav-row + .nav-row {
+.nav-item + .nav-item {
     border-top: 2px solid #000;
 }
 
-nav-rows img {
+.nav-item img {
+    max-width: 60%;
     margin-bottom: 20px;
 }
-
-.phone {
-    box-sizing: border-box;
-    width: min(240px, 90%);       
-    aspect-ratio: 310 / 638;
-    margin: auto;
-    border: 3px solid #000;
-    border-radius: 32px;
-    background-color: #fff;
-    flex-shrink: 0;
-}
-
-
 
 .todo {
     justify-content: flex-start;
@@ -135,6 +128,8 @@ nav-rows img {
     flex-direction: column;
     border: 2px solid #000;
     margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: #E7ECEA;
     justify-self: center;
 }
@@ -144,7 +139,7 @@ nav-rows img {
     display: flex;
     align-items: flex-start; 
     justify-content: center;
-    padding: 10px 100px 0;
+    padding: 10px 40px 0;
     margin-bottom: 60px;
 }
 
@@ -186,4 +181,263 @@ footer .flex-item:nth-child(3) { flex: 0 0 9.5%; text-align: center; }  /* FPS 6
   background-color: #E03923;
   border-radius: 50%;
   display: inline-block;
+}
+
+
+/* ---------- PHONE CONTENT ---------- */
+.phone {
+    box-sizing: border-box;
+    width: min(280px, 90%);       
+    aspect-ratio: 9 / 18.5; /** Phone dimensions */
+    margin: auto;
+    border: 3px solid #000;
+    border-radius: 32px;
+    background-color: #fff;
+    flex-shrink: 0;
+        padding: 14px 12px;
+    overflow: hidden;
+}
+
+.phone .top-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.phone .back-btn {
+    position: absolute;
+    left: 0;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.phone .title {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* avatar + counts */
+.phone .head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.phone .avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #DBE2DF;
+    flex-shrink: 0;
+}
+
+.phone .stats {
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    gap: 20px;
+    text-align: center;
+}
+
+.phone .stat b {
+    display: block;
+    font-size: 13px;
+}
+
+.phone .stat span {
+    font-size: 9px;
+}
+
+.phone .name {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.phone .bio {
+    margin-bottom: 12px;
+}
+
+.phone .bio p {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.phone #pronouns {
+    color: #666;
+}
+
+.phone .btn {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.phone #follow-btn,
+.phone #message-btn {
+    flex: 1;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #DBE2DF;
+}
+
+/* stories */
+.phone .stories {
+    display: flex;
+    justify-content: left;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.phone .story {
+    text-align: center;
+}
+
+.phone .story .ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #DBE2DF;
+    margin: 0 auto 3px;
+}
+
+.phone .story span {
+    font-size: 9px;
+}
+
+/* post grid */
+.phone .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+}
+
+.phone .grid div {
+    aspect-ratio: 1;
+    background-color: #DBE2DF;
+}
+
+
+
+.phone .avatar,
+.phone .story .ring,
+.phone .grid div {
+    overflow: hidden; 
+}
+
+.phone .avatar img,
+.phone .story .ring img,
+.phone .grid div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+
+
+
+
+/* ---------- POST VIEW ---------- */
+
+.phone.post-view {
+    overflow-y: auto;
+}
+
+.phone.post-view::-webkit-scrollbar {
+    display: none;
+}
+
+.phone .back-btn {
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.mini-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #DBE2DF;
+}
+
+.post-username {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.post-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #DBE2DF;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* like, comment, share */
+.post-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.action-box {
+    width: 16px;
+    height: 16px;
+}
+
+/* text under the photo */
+.post-likes,
+.post-caption,
+.comment,
+.post-date {
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.post-likes {
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.post-caption {
+    margin-bottom: 6px;
+}
+
+.post-comments {
+    margin-bottom: 6px;
+}
+
+.comment {
+    margin-bottom: 3px;
+}
+
+.post-date {
+    color: #666;
+    font-size: 9px;
 }
